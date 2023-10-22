@@ -51,6 +51,10 @@ android {
 
 dependencies {
 
+    val dokit_version = "3.5.0"
+    val xpopup_version = "2.9.19"
+    val utilcodex_version = "1.31.1"
+
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation("androidx.activity:activity-compose:1.7.0")
@@ -66,4 +70,33 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    val lifecycle_version = "2.2.0"
+    val nav_version = "2.5.3"
+
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+
+    // Kotlin
+//    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+//    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    // Feature module Support
+//    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+
+    // Testing Navigation
+//    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+
+    // Jetpack Compose Integration
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.3.1")
+    //调试工具
+    debugImplementation("io.github.didi.dokit:dokitx:${dokit_version}")
+    releaseImplementation("io.github.didi.dokit:dokitx-no-op:${dokit_version}")
+    //弹框库
+    implementation("com.github.li-xiaojun:XPopup:$xpopup_version")
+    //工具类库
+    implementation("com.blankj:utilcodex:$utilcodex_version")
+
 }
